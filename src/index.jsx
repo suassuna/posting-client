@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Users from './components/Users';
+import Posts from './components/Posts';
 
 const users = [
   {name: 'John'},
@@ -10,8 +11,19 @@ const users = [
   {name: 'Martha'},
   {name: 'Josh'}
 ];
+const posts = [
+  {title: 'Hello!'},
+  {title: 'Something interesting...'},
+  {title: 'Oh my!!!'},
+  {title: 'Have you heard?'},
+  {title: 'Go to the moon'},
+  {title: 'Cupcake recipe'}
+];
 
 ReactDOM.render(
-  <Users users={users} />,
+  <div>
+    <Users users={users} />
+    <Posts posts={posts} />
+  </div>,
   document.getElementById('app')
 );
