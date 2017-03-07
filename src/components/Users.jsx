@@ -5,7 +5,7 @@ export default class Users extends React.Component {
 
   render() {
     return (
-      <div>
+      <form action="#">
         <div className="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
           <label className="mdl-button mdl-js-button mdl-button--icon" htmlFor="sample6">
             <i className="material-icons">search</i>
@@ -16,7 +16,7 @@ export default class Users extends React.Component {
           </div>
           <UserList users={this.props.users} />
         </div>
-      </div>
+      </form>
     );
   }
 }
