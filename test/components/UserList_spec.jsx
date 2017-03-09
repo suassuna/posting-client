@@ -5,17 +5,18 @@ import {
   renderIntoDocument,
   scryRenderedDOMComponentsWithTag
 } from 'react-addons-test-utils';
+import { fromJS } from 'immutable';
 import UserList from '../../src/components/UserList';
 
 describe('UserList', () => {
 
   it('renders one list item for each user', () => {
-    const users = [
+    const users = fromJS([
       {name: 'John'},
       {name: 'Kendra'},
       {name: 'Mike'},
       {name: 'Lucy'}
-    ];
+    ]);
 
     const component = renderIntoDocument(
       <UserList users={users} />
@@ -27,10 +28,10 @@ describe('UserList', () => {
   });
 
   it('renders user name', () => {
-    const users = [
+    const users = fromJS([
       {name: 'John'},
       {name: 'Kendra'}
-    ];
+    ]);
 
     const component = renderIntoDocument(
       <UserList users={users} />

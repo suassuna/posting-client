@@ -5,17 +5,18 @@ import {
   renderIntoDocument,
   scryRenderedDOMComponentsWithTag
 } from 'react-addons-test-utils';
+import { fromJS } from 'immutable';
 import PostList from '../../src/components/PostList';
 
 describe('PostList', () => {
 
   it('renders one list item for each post', () => {
-    const posts = [
+    const posts = fromJS([
       {title: 'Hello!'},
       {title: 'Something interesting...'},
       {title: 'Oh my!!!'},
       {title: 'Have you heard?'}
-    ];
+    ]);
 
     const component = renderIntoDocument(
       <PostList posts={posts} />
@@ -27,10 +28,10 @@ describe('PostList', () => {
   });
 
   it('renders post title', () => {
-    const posts = [
+    const posts = fromJS([
       {title: 'Hello!'},
       {title: 'Something interesting...'}
-    ];
+    ]);
 
     const component = renderIntoDocument(
       <PostList posts={posts} />

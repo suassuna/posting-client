@@ -5,15 +5,16 @@ import {
   renderIntoDocument,
   scryRenderedDOMComponentsWithTag
 } from 'react-addons-test-utils';
+import { fromJS } from 'immutable';
 import Post from '../../src/components/Post';
 
 describe('Post', () => {
 
   it('renders post title and post content', () => {
-    const post = {
+    const post = fromJS({
         title: 'Hello!',
         content: "This is some great content, isn't it?"
-      };
+      });
 
     const component = renderIntoDocument(
       <Post post={post} />

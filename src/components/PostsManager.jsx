@@ -1,9 +1,17 @@
 import React from 'react';
+import {List} from 'immutable';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import Posts from './Posts';
 
 export default class PostsManager extends React.Component {
+  constructor(props) {
+    super(props);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+  }
+
   getPost(postId) {
-    return this.props.posts.find(entry => entry.id == postId);
+    console.log(this.props.posts.get(postId, List()));
+    return this.props.posts.get(postId, List());
   }
 
   render() {
